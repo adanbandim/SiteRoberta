@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-bg: #1c1a1a;
+    --light-bg: #ffffff;
+    --btn-gray: #f2f2f2;
+    --btn-hover: #e0e0e0;
+    --text-main: #333333;
+    --text-black: #000000;
+    --accent-color: #0056b3;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background-color: var(--dark-bg);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo { height: 50px; }
+
+.list ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.list a {
+    text-decoration: none;
+    color: #bbb;
+    padding: 8px 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.list a:hover, .list a.active {
+    color: white;
+}
+
+.list a.active {
+    color: white;
+    border-bottom: 3px solid var(--accent-color);
+    border-radius: 0;
+}
+
+/* Layout Principal */
+.main {
+    padding: 40px 2%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tittle-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tittle-container h1 {
+    color: var(--text-black);
+    font-size: 2rem;
+}
+
+/* Grid de Cards (3 seções lado a lado) */
+.cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+/* Estilo do Card */
+.card {
+    background: var(--light-bg);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.card-header h2 {
+    color: var(--text-black);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    min-height: 3.5rem; /* Alinha os títulos */
+}
+
+/* Colunas Internas (Aulas, Listas, Materiais) */
+.card-content {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+}
+
+.column h3 {
+    font-size: 1.1rem;
+    color: var(--text-black);
+    margin-bottom: 12px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Estilização dos Botões */
+.button {
+    background-color: var(--btn-gray);
+    padding: 10px 8px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.button:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-2px);
+    border-color: #ccc;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg);
+    color: #777;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Responsividade */
+@media (max-width: 1100px) {
+    .cards-wrapper {
+        grid-template-columns: 1fr 1fr; /* 2 colunas em tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-wrapper {
+        grid-template-columns: 1fr; /* 1 coluna no celular */
+    }
+    
+    .card-content {
+        flex-direction: column; /* Colunas internas viram linhas no celular */
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
