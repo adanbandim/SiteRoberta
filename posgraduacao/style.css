@@ -5,10 +5,11 @@
 }
 
 :root {
-    --dark-bg: #1c1a1a;
+   --dark-bg: #1c1a1a;
     --light-bg: #ffffff;
-    --btn-gray: #f2f2f2;
-    --btn-hover: #e0e0e0;
+    --btn-dark: #2c3e50; 
+    --btn-hover: #1a252f;
+    --text-btn: #ffffff;
     --text-main: #333333;
     --text-black: #000000;
     --accent-color: #0056b3;
@@ -74,7 +75,7 @@ body {
     font-size: 2rem;
 }
 
-/* Grid de Cards (3 seções lado a lado) */
+/* Grid dos Cards */
 .cards-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -82,7 +83,7 @@ body {
     align-items: start;
 }
 
-/* Estilo do Card */
+/* Estilização dos Card */
 .card {
     background: var(--light-bg);
     border-radius: 15px;
@@ -105,10 +106,10 @@ body {
     color: var(--text-black);
     font-size: 1.4rem;
     margin-bottom: 20px;
-    min-height: 3.5rem; /* Alinha os títulos */
+    min-height: 3.5rem; 
 }
 
-/* Colunas Internas (Aulas, Listas, Materiais) */
+/* Colunas de dentro */
 .card-content {
     display: flex;
     gap: 15px;
@@ -129,11 +130,12 @@ body {
 
 /* Estilização dos Botões */
 .button {
-    background-color: var(--btn-gray);
-    padding: 10px 8px;
+    background-color: var(--btn-dark); 
+    color: var(--text-btn); 
+    padding: 8px 4px;
     margin-bottom: 8px;
     border-radius: 6px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-align: center;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -143,7 +145,7 @@ body {
 .button:hover {
     background-color: var(--btn-hover);
     transform: translateY(-2px);
-    border-color: #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Footer */
@@ -155,20 +157,20 @@ footer {
     margin-top: 40px;
 }
 
-/* Responsividade */
+/* Parte para responsividade */
 @media (max-width: 1100px) {
     .cards-wrapper {
-        grid-template-columns: 1fr 1fr; /* 2 colunas em tablets */
+        grid-template-columns: 1fr 1fr; 
     }
 }
 
 @media (max-width: 768px) {
     .cards-wrapper {
-        grid-template-columns: 1fr; /* 1 coluna no celular */
+        grid-template-columns: 1fr; 
     }
     
     .card-content {
-        flex-direction: column; /* Colunas internas viram linhas no celular */
+        flex-direction: column; 
     }
 
     .header {
