@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 :root {
@@ -142,6 +143,7 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     border: 1px solid transparent;
+    
 }
 
 .button:hover {
@@ -160,23 +162,119 @@ footer {
 }
 
 /* Parte da responsividade */
+.list ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Telas médias (Tablets e Laptops pequenos) */
 @media (max-width: 1300px) {
+    .main {
+        padding: 40px 3%; 
+    }
+
     .cards-wrapper {
-        grid-template-columns: repeat(2, 1fr); 
+    
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+        gap: 20px;
     }
 }
 
+/* Telas pequenas (celulares) */
 @media (max-width: 768px) {
-    .cards-wrapper {
-        grid-template-columns: 1fr; 
-    }
-    
-    .card-content {
-        flex-direction: row;
-    }
-
+    /* Ajuste do Header */
     .header {
         flex-direction: column;
         gap: 15px;
+        padding: 20px 5%;
+    }
+
+    .list ul {
+        gap: 10px;
+    }
+
+    .list a {
+        padding: 8px 10px;
+        font-size: 0.95rem;
+    }
+
+    /* Ajuste do Título Principal */
+    .tittle-container {
+        margin-bottom: 30px;
+    }
+
+    .tittle-container h1 {
+        font-size: 1.5rem; 
+        padding: 0 15px;
+    }
+
+    /* Ajuste dos Cards */
+    .cards-wrapper {
+        grid-template-columns: 1fr; /* 1 card por linha */
+        gap: 25px; 
+        padding: 0 10px; 
+    }
+
+    .card {
+        padding: 20px; 
+    }
+
+    .card-img {
+        height: 180px; 
+    }
+
+    .card-header h2 {
+        min-height: auto; 
+        margin-bottom: 15px;
+    }
+
+    
+    .card-content {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .column h3 {
+        font-size: 1.1rem;
+        padding-bottom: 8px;
+    }
+
+    .button {
+        padding: 12px 8px; 
+        font-size: 0.9rem; 
+        margin-bottom: 10px;
+    }
+}
+
+/* Telas MUITO pequenas, menor que isso já é um relogio*/
+@media (max-width: 480px) {
+    .tittle-container h1 {
+        font-size: 1.3rem;
+    }
+    
+   
+    .list ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 5px;
+    }
+    
+    .list li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .list a {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1); /* Separador sutil */
+    }
+
+    .list a.active {
+        border-bottom: 3px solid var(--accent-color);
     }
 }
